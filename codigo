@@ -1,0 +1,23 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Dec 21 13:34:47 2018
+
+@author: Man
+"""
+import pandas as pd
+mainpath3 = r'C:\Users\Man\Documents\Machine Learning\Phyton Machine Learning\python-ml-course-master\datasets'
+filename3 = r'\customer-churn-model\Customer Churn Model.txt'
+fullpath3 = mainpath3 + filename3
+datap = pd.read_csv(fullpath3)
+datap.head()
+#crear un subconjunto de datos de una col
+State = datap["State"]
+State.head()
+#crear un subconjunto de datos varios datos
+Subset = datap[["State","Area Code", "Phone"]]
+Subset.head()
+
+#Subconjunto de Filas
+#Ususarios con day means<200
+data1= datap(datap["Day Mins"]>200)
+data2= datap(datap["State"]=="NY")
